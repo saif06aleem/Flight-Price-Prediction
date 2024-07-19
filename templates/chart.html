@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Satisfaction Pie Chart</title>
+    <!-- Include Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .topnav a {
+            color: #f2f2f2;
+            text-decoration: none;
+            font-size: 17px;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .topnav a:hover {
+            color: #8BC34A; /* Light green color on hover */
+        }
+
+        .topnav a.active {
+            color: #4CAF50;
+        }
+
+        #chart-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #chart {
+            width: 80%;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        /* Additional styles for customization options */
+        .options-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .option {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .option select {
+            padding: 8px 12px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .option select:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+
+        .option label {
+            font-size: 14px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/home1">Back</a>
+        <a href="/logout">Logout</a>
+    </div>
+    <h1>Flight Satisfaction</h1>
+    <!-- Container for chart and customization options -->
+    <div id="chart-container">
+        <div id="chart">{{ plot_html|safe }}</div>
+        <!-- Additional options for customization -->
+        
+    </div>
+
+    <!-- JavaScript to display Plotly chart -->
+    <script>
+        var plot = document.getElementById('chart');
+        plot.innerHTML = '{{ plot_html|safe }}';
+    </script>
+</body>
+</html>

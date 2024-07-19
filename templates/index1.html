@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skysight Analysis</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20230705/pngtree-exploring-the-world-a-3d-render-of-air-travel-essentials-on-image_3740892.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            transition: background-image 0.5s ease;
+        }
+
+        .main-heading {
+    text-align: center;
+    font-size: 60px;
+    color: #fff;
+    margin: 20px 0 50px; /* Adjusted margin-top to move the heading slightly upwards */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: font-size 0.5s ease, text-shadow 0.5s ease, margin-top 0.5s ease; /* Added margin-top to transition */
+    background-image: linear-gradient(to right, #40ff06, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Open Sans', sans-Roboto; /* Change the font family here */
+}
+
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: margin-top 0.5s ease;
+        }
+
+        .widget-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .widget {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .widget:hover {
+            transform: translateY(-5px);
+        }
+
+        .widget h3 {
+            color: #333;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .widget p {
+            color: #666;
+            transition: color 0.3s ease;
+        }
+
+        .widget a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+            display: inline-block;
+            background-color: #f1f1f1;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .widget a:hover {
+            background-color: #ddd;
+        }
+
+        .widget-form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            box-sizing: border-box;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .widget-form input[type="submit"]:hover {
+            opacity: 1;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                margin-top: 100px;
+            }
+
+            .widget-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+<h1 class="main-heading">Skysight Analysis</h1>
+
+<div class="container">
+    <div class="widget-container">
+        <div class="widget">
+            <h3>Login</h3>
+            <form class="widget-form" action="/userlogin" method="GET">
+                <input type="submit" value="Login">
+            </form>
+        </div>
+        <div class="widget">
+            <h3>Registration</h3>
+            <form class="widget-form" action="/enternew" method="GET">
+                <input type="submit" value="Register">
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

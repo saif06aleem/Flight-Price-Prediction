@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flight Prediction</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url(https://wallpaperplay.com/walls/full/d/2/f/58025.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container-custom {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+            width: 250px;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #000;
+            font-size: 18px;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .topnav a {
+            color: #f2f2f2;
+            text-decoration: none;
+            font-size: 17px;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .topnav a:hover {
+            color: #8BC34A; /* Light green color on hover */
+        }
+
+        .topnav a.active {
+            color: #4CAF50;
+        }
+
+
+        form {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 60%;
+            margin: auto;
+            margin-top: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form select,
+        form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="topnav">
+    <a href="/" class="active">Home</a>
+    <a href="/home1">Back</a>
+    <a href="/logout">Logout</a>
+</div>
+
+<form action="/predict1" method="POST">
+    <h1>PREDICTION</h1>
+
+    <label for="airline">Airline:</label>
+    <select id="airline" name="comment">
+        <option>SpiceJet</option>
+        <option>AirAsia</option>
+        <option>Vistara</option>
+        <option>GO_FIRST</option>
+        <option>Indigo</option>
+        <option>Air_India</option>
+    </select>
+
+    <label for="source_city">Source City:</label>
+    <select id="source_city" name="comment1">
+        <option>Delhi</option>
+        <option>Mumbai</option>
+        <option>Bangalore</option>
+        <option>Kolkata</option>
+        <option>Hyderabad</option>
+        <option>Chennai</option>
+    </select>
+
+    <label for="departure_time">Departure Time:</label>
+    <select id="departure_time" name="comment2">
+        <option>Early_Morning</option>
+        <option>Morning</option>
+        <option>Afternoon</option>
+        <option>Night</option>
+        <option>Late_Night</option>
+        <option>Evening</option>
+    </select>
+
+    <label for="stops">Stops:</label>
+    <select id="stops" name="comment3">
+        <option>zero</option>
+        <option>one</option>
+        <option>two_or_more</option>
+    </select>
+
+    <label for="arrival_time">Arrival Time:</label>
+    <select id="arrival_time" name="comment4">
+        <option>Early_Morning</option>
+        <option>Morning</option>
+        <option>Afternoon</option>
+        <option>Night</option>
+        <option>Late_Night</option>
+        <option>Evening</option>
+    </select>
+
+    <label for="destination_city">Destination City:</label>
+    <select id="destination_city" name="comment5">
+        <option>Delhi</option>
+        <option>Mumbai</option>
+        <option>Bangalore</option>
+        <option>Kolkata</option>
+        <option>Hyderabad</option>
+        <option>Chennai</option>
+    </select>
+
+    <label for="flight_class">Class:</label>
+    <select id="flight_class" name="comment6">
+        <option>Economy</option>
+        <option>Business</option>
+    </select>
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

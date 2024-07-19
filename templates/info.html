@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flight Prediction</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url(https://wallpaperplay.com/walls/full/d/2/f/58025.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container-custom {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+            width: 250px;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #000;
+            font-size: 18px;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .topnav a {
+            color: #f2f2f2;
+            text-decoration: none;
+            font-size: 17px;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .topnav a:hover {
+            color: #8BC34A; /* Light green color on hover */
+        }
+
+        .topnav a.active {
+            color: #4CAF50;
+        }
+
+
+        form {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 60%;
+            margin: auto;
+            margin-top: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form input[type="text"],
+        form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        form select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 9l6 6 6-6"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 14px;
+        }
+
+        form input[type="submit"] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="topnav">
+    <a href="/" class="active">Home</a>
+    <a href="/home1">Back</a>
+    <a href="/logout" >Logout</a>
+</div>
+
+<div>
+    <form action="/predict" method="POST">
+        <h1>Prediction</h1>
+        <label for="seat_comfort">Seat Comfort (1-5):</label>
+        <input type="text" id="seat_comfort" name="comment1" placeholder="Enter rating">
+
+        <label for="inflight_entertainment">Inflight Entertainment (1-5):</label>
+        <input type="text" id="inflight_entertainment" name="comment2" placeholder="Enter rating">
+
+        <label for="ease_of_booking">Ease of Online Booking (1-5):</label>
+        <input type="text" id="ease_of_booking" name="comment3" placeholder="Enter rating">
+
+        <label for="online_support">Online Support (1-5):</label>
+        <input type="text" id="online_support" name="comment4" placeholder="Enter rating">
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="comment5">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <label for="customer_type">Customer Type (1-5):</label>
+        <input type="text" id="customer_type" name="comment6" placeholder="Enter rating">
+
+        <label for="type_of_travel">Type of Travel:</label>
+        <select id="type_of_travel" name="comment7">
+            <option value="Personal">Personal Travel</option>
+            <option value="Business">Business Travel</option>
+        </select>
+
+        <label for="class_type">Class Type:</label>
+        <select id="class_type" name="comment8">
+            <option value="Economy">Economy</option>
+            <option value="Business">Business</option>
+        </select>
+
+        <label for="on_board_service">On Board Service (1-5):</label>
+        <input type="text" id="on_board_service" name="comment9" placeholder="Enter rating">
+
+        <label for="leg_room_service">Leg Room Service (1-5):</label>
+        <input type="text" id="leg_room_service" name="comment10" placeholder="Enter rating">
+
+        <label for="online_boarding">Online Boarding (1-5):</label>
+        <input type="text" id="online_boarding" name="comment11" placeholder="Enter rating">
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+</body>
+</html>
